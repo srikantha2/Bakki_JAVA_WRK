@@ -29,5 +29,9 @@ public class TimeUtils {
 		else
 			return "";
 	}
+	
+	public String presentMode(){
+		return TimeUtils.getDayMode();
+	}
 
 }

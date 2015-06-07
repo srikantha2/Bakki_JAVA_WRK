@@ -3,7 +3,9 @@
  */
 package com.bakki.jutil;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -17,7 +19,7 @@ import org.junit.Test;
  */
 public class TestTimeUtils {
 
-	private TimeUtils tUtils= new TimeUtils();
+	private TimeUtils tUtils;
 	
 	/**
 	 * @throws java.lang.Exception
@@ -38,6 +40,8 @@ public class TestTimeUtils {
 	 */
 	@Before
 	public void setUp() throws Exception {
+		tUtils= mock(TimeUtils.class);
+		 when(tUtils.presentMode()).thenReturn("Good Morning,");
 	}
 
 	/**
@@ -52,9 +56,11 @@ public class TestTimeUtils {
 	 */
 	@Test
 	public final void testGetMorningMode() {
-		String actual=tUtils.getDayMode();
+		String actual=tUtils.presentMode();
 		String expected ="Good Morning,";
 		assertEquals(expected, actual);
+      //  verify(, atLeastOnce()).findAccount(customer);
+
 	}
 
 }
