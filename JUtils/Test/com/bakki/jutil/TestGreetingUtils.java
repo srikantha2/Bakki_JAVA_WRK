@@ -17,7 +17,7 @@ import org.junit.Test;
  *
  */
 public class TestGreetingUtils {
-	private GreetingUtils gUtils;
+	private GreetingJUtils gUtils;
 	static Logger log = Logger.getLogger(TestGreetingUtils.class.getName());
 
 	/**
@@ -44,7 +44,7 @@ public class TestGreetingUtils {
 	@Before
 	public void setUp() throws Exception {
 		log.debug("TestGreetingUtils:: Before Test Invocation");
-		gUtils = new GreetingUtils();
+		gUtils = new GreetingJUtils();
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class TestGreetingUtils {
 
 	/**
 	 * Test method for
-	 * {@link com.bakki.jutil.GreetingUtils#wishUser(java.lang.String)}.
+	 * {@link com.bakki.jutil.GreetingJUtils#wishUser(java.lang.String)}.
 	 */
 	@Test
 	public final void testGreetTheUser() {

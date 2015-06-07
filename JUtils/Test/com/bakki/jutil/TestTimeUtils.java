@@ -7,11 +7,13 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 /**
  * @author prakash
@@ -19,7 +21,7 @@ import org.junit.Test;
  */
 public class TestTimeUtils {
 
-	private TimeUtils tUtils;
+	private TimeJUtils tUtils;
 	
 	/**
 	 * @throws java.lang.Exception
@@ -40,7 +42,7 @@ public class TestTimeUtils {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		tUtils= mock(TimeUtils.class);
+		tUtils= mock(TimeJUtils.class);
 		 when(tUtils.presentMode()).thenReturn("Good Morning,");
 	}
 
@@ -52,15 +54,17 @@ public class TestTimeUtils {
 	}
 
 	/**
-	 * Test method for {@link com.bakki.jutil.TimeUtils#getDayMode()}.
+	 * Test method for {@link com.bakki.jutil.TimeJUtils#getDayMode()}.
 	 */
 	@Test
 	public final void testGetMorningMode() {
+		
 		String actual=tUtils.presentMode();
 		String expected ="Good Morning,";
+		StringUtils.isNotBlank(expected); 
 		assertEquals(expected, actual);
-      //  verify(, atLeastOnce()).findAccount(customer);
-
+		Mockito.verify(tUtils, Mockito.atLeastOnce());
+		
 	}
 
 }

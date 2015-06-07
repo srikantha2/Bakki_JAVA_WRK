@@ -9,8 +9,8 @@ import org.apache.log4j.Logger;
  * @author prakash
  *
  */
-public class GreetingUtils {
-	static final Logger logger = Logger.getLogger(GreetingUtils.class.getName());
+public class GreetingJUtils {
+	static final Logger logger = Logger.getLogger(GreetingJUtils.class.getName());
 	
 	public static String wishUser(String name){
 		logger.debug("Welcome to Mr."+name);
@@ -18,7 +18,7 @@ public class GreetingUtils {
 	}
 	
 	public String greetTheUser(String uName){
-		return TimeUtils.getDayMode()+GreetingUtils.wishUser(uName);
+		return TimeJUtils.getDayMode()+GreetingJUtils.wishUser(uName);
 	}
 
 }

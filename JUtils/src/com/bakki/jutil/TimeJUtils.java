@@ -11,9 +11,9 @@ import org.apache.log4j.Logger;
  * @author prakash
  *
  */
-public class TimeUtils {
+public class TimeJUtils {
 	
-	static final Logger logger = Logger.getLogger(TimeUtils.class.getName());
+	static final Logger logger = Logger.getLogger(TimeJUtils.class.getName());
 
 	@SuppressWarnings("deprecation")
 	public static String getDayMode(){
@@ -31,7 +31,7 @@ public class TimeUtils {
 	}
 	
 	public String presentMode(){
-		return TimeUtils.getDayMode();
+		return TimeJUtils.getDayMode();
 	}
 
 }
