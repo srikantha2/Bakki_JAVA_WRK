@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+<!--  the reloadable logging does not support logger tag spanned across multiple lines -->
+
+	<appender name="DEFAULT-BASE" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="C:\\MyLogs\\sample-Common.log"/>
+		<param name="Append" value="true"/>
+		<param name="MaxFileSize" value="20000KB"/>
+		<param name="MaxBackupIndex" value="5"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %t %c - %m%n"/>
+		</layout>
+	</appender>
+
+	<appender name="HIBERNATE" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="C:\\MyLogs\\sample-hibernate-info.log"/>		
+		<param name="Append" value="true"/>		
+		<param name="MaxFileSize" value="20000KB"/>
+		<param name="MaxBackupIndex" value="5"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %t %c - %m%n"/>
+		</layout>
+	</appender>
+	
+	<appender name="SPRING_APPENDER" class="org.apache.log4j.RollingFileAppender"> 
+        <param name="File" value="C:\\MyLogs\\sample-spring-info.log" /> 
+        <param name="Append" value="true" /> 
+        <param name="MaxFileSize" value="5000KB"/>
+        <param name="MaxBackupIndex" value="3"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="%d{MM/dd/yyyy HH:mm:ss}  [%t]:%c{5}.%M()%L %m%n" />
+        </layout>
+	</appender>
+	
+  	<logger name="org.hibernate.SQL" additivity="false">
+		<level value="DEBUG"/>
+		<appender-ref ref="HIBERNATE"/>
+	</logger>
+
+	<logger name="org.hibernate" additivity="false">
+		<level value="WARN"/>
+		<appender-ref ref="HIBERNATE"/>
+	</logger>
+
+
+	<logger name="com.bakka.util" additivity="false">
+		<level value="DEBUG"/>
+		<appender-ref ref="DEFAULT-BASE"/>
+	</logger>
+	<logger name="com.bakka.web" additivity="false">
+		<level value="DEBUG"/>
+		<appender-ref ref="DEFAULT-BASE"/>
+	</logger>
+
+	<logger name="org.springframework" additivity="false">
+	    <level value="INFO" />
+	    <appender-ref ref="SPRING_APPENDER"/>
+	</logger>
+	
+	<logger name="org.springframework.beans" additivity="false">
+	    <level value="INFO" />
+	     <appender-ref ref="SPRING_APPENDER"/>
+	</logger>
+	
+	<logger name="org.springframework.jdbc.core" additivity="false">
+	    <level value="INFO" />
+	     <appender-ref ref="SPRING_APPENDER"/>
+	</logger>
+	
+	<logger name="org.springframework.transaction.support.TransactionSynchronizationManager" additivity="false">
+	    <level value="INFO" />
+	     <appender-ref ref="SPRING_APPENDER"/>
+	</logger>
+	
+	<root>
+		<level value="WARN"/>
+		<appender-ref ref="DEFAULT-BASE"/>
+	</root>
+</log4j:configuration>
