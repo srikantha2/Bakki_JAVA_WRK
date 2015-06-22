@@ -65,7 +65,7 @@ public class TestGreetingUtils {
 	public final void testGreetTheUser() {
 		log.info("TestGreetingUtils:: Testing started..");
 
-		String expecting = "Good Morning,Welcome Mr.Srikanth";
+		String expecting = "Good Evening,Welcome Mr.Srikanth";
 		String actual = gUtils.greetTheUser("Srikanth");
 
 		assertEquals("Success", expecting, actual);
