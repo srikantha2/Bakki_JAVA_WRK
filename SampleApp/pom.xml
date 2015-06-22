@@ -4,6 +4,8 @@
   <artifactId>SampleApp</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  <!-- author:SB -->
+  <!-- This project is not setup for maven- pom is used to get libs -->
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
