@@ -3,12 +3,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<title>Spring 3 MVC HashMap Form</title>
+<title>Content Management- Properties</title>
 <style>
 table, td, th {
     border: 1px solid green;
 }
-
 th {
     background-color: green;
     color: white;
@@ -16,7 +15,7 @@ th {
 </style>
 </head>
 <body>
-	<h2>Show Prop</h2>
+<h2>View *.Properties Content</h2>
 	<table>
 		<tr>
 			<th>Key</th>

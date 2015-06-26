@@ -3,12 +3,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-	<title>Spring 3 MVC HashMap Form</title>
+<title>Content Management- Properties</title>
 <style>
 table, td, th {
     border: 1px solid green;
 }
-
 th {
     background-color: green;
     color: white;
@@ -17,7 +16,7 @@ th {
 </head>
 <body>
 
-<h2>Edit Prop</h2>
+<h2>Edit *.Properties Content-<spring:message code="label.zipcode" /> ${zipcode}</h2>
 <form:form method="post" action="addProp.html" modelAttribute="reloadPropVO">
 	<table>
 	<tr>
@@ -32,7 +31,7 @@ th {
 	</c:forEach>
 </table>	
 <br/>
-
+<c:out value="${reloadPropVO.attribute} "/>
 <input type="submit" value="Save" />
 	
 </form:form>

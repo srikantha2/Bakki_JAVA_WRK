@@ -17,4 +17,25 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<!-- Application properties- reload not available -->
+	 <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+		<property name="location"> <value>WEB-INF/abc.properties</value> </property> 
+		<property name="ignoreUnresolvablePlaceholders" value="true"/> 
+	</bean> 
+	
+	<!-- labels & messages-reloading (localization properties)-->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>WEB-INF/foo</value>
+
+			</list>
+		</property>
+		<property name="cacheSeconds">
+			<value>5</value>
+		</property>
+
+	</bean>
 </beans>
