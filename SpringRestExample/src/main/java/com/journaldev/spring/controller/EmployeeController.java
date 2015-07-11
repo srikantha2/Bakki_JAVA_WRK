@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.journaldev.constants.EmpRestURIConstants;
 import com.journaldev.spring.model.Employee;
 
 /**
@@ -72,6 +73,17 @@ public class EmployeeController {
 		logger.info("Start deleteEmployee.");
 		Employee emp = empData.get(empId);
 		empData.remove(empId);
+		return emp;
+	}
+	
+	@RequestMapping(value = EmpRestURIConstants.DUMMY_AUTH_EMP, method = RequestMethod.GET)
+	public @ResponseBody Employee getDummyAuthEmployee() {
+		logger.info("Start getDummyAuthEmployee");
+		Employee emp = new Employee();
+		emp.setId(9998);
+		emp.setName("DummyAuth");
+		//emp.setCreatedDate(new Date());
+		empData.put(9998, emp);
 		return emp;
 	}
 	
